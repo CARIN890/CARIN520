@@ -40,6 +40,7 @@
             font-weight: 600;
             text-decoration: none;
             display: block;
+            -webkit-tap-highlight-color: transparent; /* 去除小红书内点击高亮 */
         }
         /* 提示文案 */
         .tip {
@@ -62,26 +63,36 @@
     
     <div class="shop-info">店铺ID：661cc3d974557900017901cf</div>
 
-    <!-- 核心：适配你店铺的授权链接（直接用你平台复制的链接替换下面的【你的授权链接】） -->
+    <!-- 已嵌入你提供的真实小红书授权链接 -->
     <a href="https://ark.xiaohongshu.com/ark/authorization?appId=f9f31e650cef42c29719&redirectUri=https%3A%2F%2Fcarin890.github.io%2FCARIN520%2F" class="bind-btn">立即绑定小红书会员</a>
 
     <div class="tip">⚠️ 请在小红书APP内点击绑定<br>绑定后即可享受CARIN专属会员权益</div>
 
-    <!-- 小红书APP内适配脚本（关键） -->
+    <!-- 优化版小红书APP适配脚本 -->
     <script>
-        // 仅允许小红书APP内跳转，避免浏览器报错
         const btn = document.querySelector('.bind-btn');
-        btn.onclick = function(e) {
+        btn.addEventListener('click', function(e) {
             const userAgent = navigator.userAgent.toLowerCase();
-            // 检测是否为小红书APP环境
-            if (!userAgent.includes('xiaohongshu')) {
+            // 精准检测小红书APP环境（包含XHS缩写适配）
+            const isXHSApp = userAgent.includes('xiaohongshu') || userAgent.includes('xhs');
+            
+            if (!isXHSApp) {
                 e.preventDefault();
-                alert('请打开小红书APP，扫描页面二维码后再绑定！');
+                alert('请打开小红书APP操作！\n步骤：1. 将本页面链接生成二维码 2. 小红书扫码打开 3. 点击绑定');
                 return;
             }
-            // 小红书内正常跳转授权
-            window.location.href = this.href;
-        };
+            
+            // 小红书APP内强制原生跳转，避免跳转到浏览器
+            try {
+                if (window.xhs && typeof window.xhs.navigateTo === 'function') {
+                    window.xhs.navigateTo(this.href);
+                } else {
+                    window.location.href = this.href;
+                }
+            } catch (err) {
+                window.location.href = this.href;
+            }
+        });
     </script>
 </body>
 </html>
