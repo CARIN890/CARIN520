@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端适配（小红书内打开必备） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>小红书会员通 - 专属会员权益</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        /* 小红书主色调 */
+        :root {
+            --xhs-red: #FF2442;
+            --xhs-gray: #F9F9F9;
+            --xhs-text: #333333;
+        }
+        body {
+            background: var(--xhs-gray);
+            color: var(--xhs-text);
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        /* 顶部导航 */
+        .header {
+            background: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--xhs-red);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+        /* 会员banner */
+        .banner {
+            background: var(--xhs-red);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 12px;
+        }
+        .banner h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        /* 核心按钮 */
+        .btn {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            background: var(--xhs-red);
+            color: white;
+            text-align: center;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:active {
+            opacity: 0.8;
+        }
+        /* 权益模块 */
+        .benefit {
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .benefit h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--xhs-red);
+        }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .benefit-item:last-child {
+            border: none;
+        }
+        .benefit-item span {
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        /* 绑定提示 */
+        .tip {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            padding: 10px 20px;
+        }
+        /* 底部合规（小红书审核必填） */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            background: white;
+            margin-top: 30px;
+        }
+        .footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">小红书会员通</div>
+
+    <!-- 会员banner -->
+    <div class="banner">
+        <h1>专属会员权益</h1>
+        <p>开通/绑定会员，解锁全部特权</p>
+    </div>
+
+    <!-- 会员领取/开通按钮（核心入口） -->
+    <a href="javascript:alert('跳转到小红书会员绑定/开通接口')" class="btn">立即绑定会员</a>
+
+    <!-- 账号绑定提示 -->
+    <div class="tip">请使用小红书账号登录，自动绑定会员身份</div>
+
+    <!-- 会员权益列表 -->
+    <div class="benefit">
+        <h2>🎁 会员专属权益</h2>
+        <div class="benefit-item">
+            ✨ <span>专属标识展示</span>
+        </div>
+        <div class="benefit-item">
+            🎨 <span>内容优先推荐</span>
+        </div>
+        <div class="benefit-item">
+            💰 <span>专属优惠券</span>
+        </div>
+        <div class="benefit-item">
+            🚀 <span>无广告体验</span>
+        </div>
+    </div>
+
+    <!-- 底部合规声明（必填！小红书审核必须有） -->
+    <div class="footer">
+        <a href="#">隐私政策</a> | <a href="#">用户协议</a><br>
+        本服务由小红书会员通提供，最终解释权归平台所有
+    </div>
+</body>
+</html>
