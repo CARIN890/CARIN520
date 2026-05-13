@@ -3,163 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CARIN - 小红书会员通</title>
+    <title>CARIN海外旗舰店 - 小红书会员绑定</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        :root {
-            --xhs-red: #FF2442;
-            --xhs-gray: #F9F9F9;
-            --xhs-text: #333333;
+            font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", sans-serif;
         }
         body {
-            background: var(--xhs-gray);
-            color: var(--xhs-text);
+            background: #F9F9F9;
             max-width: 750px;
             margin: 0 auto;
+            padding-bottom: 30px;
         }
+        /* 小红书风格头部 */
         .header {
-            background: white;
-            padding: 15px 20px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--xhs-red);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 99;
-        }
-        .banner {
-            background: var(--xhs-red);
+            background: #FF2442;
             color: white;
-            padding: 30px 20px;
-            text-align: center;
-            margin: 10px 0;
-            border-radius: 12px;
-        }
-        .banner h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .banner p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        /* 官方规范按钮（适配小红书交互） */
-        .btn {
-            display: block;
-            width: 80%;
-            margin: 20px auto;
-            padding: 15px;
-            background: var(--xhs-red);
-            color: white;
-            text-align: center;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent; /* 小红书APP内点击无高亮 */
-        }
-        .btn:active {
-            opacity: 0.8;
-        }
-        .benefit {
-            background: white;
-            margin: 15px;
             padding: 20px;
-            border-radius: 12px;
-        }
-        .benefit h2 {
+            text-align: center;
             font-size: 18px;
-            margin-bottom: 15px;
-            color: var(--xhs-red);
+            font-weight: bold;
         }
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
+        /* 绑定按钮（小红书官方样式） */
+        .bind-btn {
+            width: 90%;
+            height: 50px;
+            line-height: 50px;
+            background: #FF2442;
+            color: white;
+            text-align: center;
+            border-radius: 25px;
+            margin: 30px auto;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
         }
-        .benefit-item:last-child {
-            border: none;
-        }
-        .benefit-item span {
-            margin-left: 10px;
-            font-size: 14px;
-        }
+        /* 提示文案 */
         .tip {
             text-align: center;
-            font-size: 12px;
-            color: #999;
-            padding: 10px 20px;
+            font-size: 14px;
+            color: #666;
+            padding: 0 20px;
         }
-        .footer {
-            padding: 20px;
+        /* 店铺信息 */
+        .shop-info {
             text-align: center;
-            font-size: 12px;
-            color: #999;
-            background: white;
-            margin-top: 30px;
-        }
-        .footer a {
-            color: #999;
-            text-decoration: none;
-            margin: 0 5px;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="header">CARIN会员通</div>
+    <div class="header">CARIN海外旗舰店 · 会员绑定</div>
+    
+    <div class="shop-info">店铺ID：661cc3d974557900017901cf</div>
 
-    <div class="banner">
-        <h1>CARIN专属会员权益</h1>
-        <p>绑定小红书账号，解锁全部特权</p>
-    </div>
+    <!-- 核心：适配你店铺的授权链接（直接用你平台复制的链接替换下面的【你的授权链接】） -->
+    <a href="https://ark.xiaohongshu.com/ark/authorization?appId=f9f31e650cef42c29719&redirectUri=https%3A%2F%2Fcarin890.github.io%2FCARIN520%2F" class="bind-btn">立即绑定小红书会员</a>
 
-    <!-- 核心：按小红书官方规范配置授权链接 -->
-    <!-- 替换规则：
-        1. YOUR_APP_ID：替换成你在小红书开放平台创建的应用ID
-        2. YOUR_REDIRECT_URI：替换成你的页面URL（https://carin890.github.io/CARIN520/）
-        3. YOUR_SCOPE：按官方要求填写（会员通常用scope：user_info,member）
-    -->
-    <a href="https://ark.xiaohongshu.com/ark/authorization?appId=YOUR_APP_ID&redirectUri=YOUR_REDIRECT_URI&scope=user_info,member&response_type=code&state=123456" class="btn">立即绑定会员</a>
+    <div class="tip">⚠️ 请在小红书APP内点击绑定<br>绑定后即可享受CARIN专属会员权益</div>
 
-    <div class="tip">请使用小红书账号登录，自动绑定会员身份</div>
-
-    <div class="benefit">
-        <h2>🎁 会员专属权益</h2>
-        <div class="benefit-item">✨ <span>专属标识展示</span></div>
-        <div class="benefit-item">🎨 <span>内容优先推荐</span></div>
-        <div class="benefit-item">💰 <span>专属优惠券</span></div>
-        <div class="benefit-item">🚀 <span>无广告体验</span></div>
-    </div>
-
-    <div class="footer">
-        <a href="#">隐私政策</a> | <a href="#">用户协议</a><br>
-        本服务由CARIN海外旗舰店提供，最终解释权归品牌所有
-    </div>
-
-    <!-- 小红书官方要求：添加JS适配APP内交互 -->
+    <!-- 小红书APP内适配脚本（关键） -->
     <script>
-        // 适配小红书APP内跳转逻辑，避免405错误
-        document.querySelector('.btn').addEventListener('click', function(e) {
-            // 检测是否在小红书APP内
-            const isXHSApp = /xiaohongshu/i.test(navigator.userAgent);
-            if (!isXHSApp) {
+        // 仅允许小红书APP内跳转，避免浏览器报错
+        const btn = document.querySelector('.bind-btn');
+        btn.onclick = function(e) {
+            const userAgent = navigator.userAgent.toLowerCase();
+            // 检测是否为小红书APP环境
+            if (!userAgent.includes('xiaohongshu')) {
                 e.preventDefault();
-                alert('请在小红书APP内打开本页面完成会员绑定');
+                alert('请打开小红书APP，扫描页面二维码后再绑定！');
                 return;
             }
-            // 小红书APP内正常跳转授权链接
+            // 小红书内正常跳转授权
             window.location.href = this.href;
-        });
+        };
     </script>
 </body>
 </html>
